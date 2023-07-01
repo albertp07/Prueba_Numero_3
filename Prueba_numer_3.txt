@@ -1,0 +1,63 @@
+def menu():
+  print("""Bienvenido a Automotora "Auto Seguro" menu, que desea realizar:
+  1. Grabar vehiculo
+  2. Buscar vehiculo
+  3. Imprimir Certificado
+  4. Salir
+  """)
+
+def grab():
+  tipo = input("Tipo de Vehiculo: ")
+  patente = input("Ingrese patente (Hasta 6 Caracteres): ")
+  marca = input("Marca del vehiculo: ")
+  precio= input("precio del vehculo: ")
+  multas = input("Ingrese multa y fecha de la multa: ")
+  fecha = input("ingrse fecha de registro: ")
+  nombre = input("Nombre del dueno: ")
+  return[tipo, patente, marca, precio, multas, fecha, nombre]
+
+def buscar():
+  encontrar = input("Ingrese patente del vehiculo que busca: ")
+  return(print(encontrar,"Mas Info..."))
+
+def cert():
+  print("""Que certificado desea solicitar:
+  opcion 1: Certificado de emision de contaminantes
+  opcion 2. Anotaciones vigentes
+  opcion 3. Certificado de Multas""")
+  op=int(input("Opcion: "))
+  if op==1:
+    name=input("Ingrese nombre:")
+    placa=input("ingrese patente: ")
+    return[name, placa, "Certificado de Emision de Contaminantes"]
+  elif op==2:
+    name=input("Ingrese nombre:")
+    placa=input("ingrese patente: ")
+    return[name, placa, "Certificado de Anotaciones Vigentes"]
+  elif op==3:
+    name=input("Ingrese nombre:")
+    placa=input("ingrese patente: ")
+    return[name, placa, "Certificado de Multas"]
+
+
+def salir():
+  return(print("""Gracias por su visita, esperamos haberle servido, Hasta Pronto!
+Atte. Automotora Auto seguro
+V.1.0001.1"""))
+
+menu()
+
+opcion=int(input("Opcion: "))
+
+while opcion != 4:
+
+  if opcion == 1:
+    print("vehiculo registrado con exito", grab())
+    opcion=int(input("Opcion: "))
+  elif opcion == 2:
+    buscar()
+    opcion=int(input("Opcion: "))
+  elif opcion==3:
+    print("Certificado creado con exito", cert())
+    opcion=int(input("Opcion: "))
+salir()
